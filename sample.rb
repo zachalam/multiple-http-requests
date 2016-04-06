@@ -13,13 +13,13 @@ threads = []
 
 
 urls.each do |u|
-    # spawn a new thread for each url
-    threads << Thread.new do
-	Net::HTTP.get(URI.parse(u))
-        # DO SOMETHING WITH URL CONTENTS HERE
-        # ...
-        puts "Request Complete: #{u}\n"
-    end
+  # spawn a new thread for each url
+  threads << Thread.new do
+    Net::HTTP.get(URI.parse(u))
+    # DO SOMETHING WITH URL CONTENTS HERE
+    # ...
+    puts "Request Complete: #{u}\n"
+  end
 end
 
 # wait for threads to finish before ending program.
